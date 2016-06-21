@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>Loïc AMBROSINI - Technical blog</title>
-		<description>Technical blog about PHP, Symfony, DDD, TDD ... and more stuff</description>
+		<title>Loïc Ambrosini</title>
+		<description>Blog technique traitant de PHP, Symfony, TDD, DDD et plus encore.</description>
 		<link>/</link>
 		<atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
 		
