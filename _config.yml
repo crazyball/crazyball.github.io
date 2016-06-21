@@ -1,0 +1,40 @@
+# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
+
+paginate: 10 # pagination based on number of posts
+paginate_path: "page:num"
+exclude: ["README.md"] # files to exclude
+highlighter: pygments
+markdown: kramdown
+disqus: crazyball-devblog
+google_analytics: dbyll
+title: Loïc AMBROSINI - Technical blog
+
+defaults:
+  -
+    scope:
+      path: "" # empty string for all files
+    values:
+      title: Loïc AMBROSINI Technical Blog
+
+description: Technical blog about PHP, Symfony, DDD, TDD ... and more stuff
+author:
+  name: Loïc Ambrosini (crazyball)
+  email: contact@crazyball.fr
+  github: crazyball
+  twitter: crazyball
+  pinterest:
+  linkedin:
+  bio: PHP Backend Developer, Symfony, DDD, TDD lover !
+  email_md5: 14cd22d61a3cdeffffafb0bd7e793889
+
+rss_path: feed.xml
+categories_path: categories.html
+tags_path: tags.html
+
+# set it as url of an image
+#sidebar_background_image: https://www.dropbox.com/s/g9h23zrycedxtk5/sky.png?raw=1
+
+BASE_PATH:
+
+gems:
+  - jekyll-paginate
