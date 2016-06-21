@@ -3,10 +3,10 @@
 paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
 exclude: ["README.md"] # files to exclude
-highlighter: pygments
+highlighter: rouge
 markdown: kramdown
 disqus: crazyball-devblog
-google_analytics: dbyll
+google_analytics: 
 title: Loïc AMBROSINI - Technical blog
 
 defaults:
