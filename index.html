@@ -51,32 +51,36 @@ tagline:
 
 <ul class="pager"> 
 
-  {% if paginator.previous_page %}
-  <li class="previous">
-    {% if paginator.previous_page == 1 %}
-    <a href="{{ site.BASE_PATH }}/">&larr; Plus récent</a>
+  {% if paginator.total_pages > 0 %}
+
+    {% if paginator.previous_page %}
+    <li class="previous">
+      {% if paginator.previous_page == 1 %}
+      <a href="{{ site.BASE_PATH }}/">&larr; Plus récent</a>
+      {% else %}
+      <a href="{{ site.BASE_PATH }}/{{ site.paginate_path | replace: ':num', paginator.previous_page }}">&larr; Plus récent</a>
+      {% endif %}
+    </li>
     {% else %}
-    <a href="{{ site.BASE_PATH }}/{{ site.paginate_path | replace: ':num', paginator.previous_page }}">&larr; Plus récent</a>
+    <li class="previous disabled">
+      <a>&larr; Plus récent</a>
+    </li>
     {% endif %}
-  </li>
-  {% else %}
-  <li class="previous disabled">
-    <a>&larr; Plus récent</a>
-  </li>
-  {% endif %}
 
-  <li>
-    <span class="page_number">Page: {{ paginator.page }} / {{ paginator.total_pages }}</span>
-  </li>
+    <li>
+      <span class="page_number">Page: {{ paginator.page }} / {{ paginator.total_pages }}</span>
+    </li>
 
-  {% if paginator.next_page %}
-  <li class="next">
-    <a href="{{ site.BASE_PATH }}/{{ site.paginate_path | replace: ':num', paginator.next_page }}">Plus ancien &rarr;</a>
-  </li>
-  {% else %}
-  <li class="next disabled">
-    <a>Plus ancien &rarr;</a>
-  </li>
+    {% if paginator.next_page %}
+    <li class="next">
+      <a href="{{ site.BASE_PATH }}/{{ site.paginate_path | replace: ':num', paginator.next_page }}">Plus ancien &rarr;</a>
+    </li>
+    {% else %}
+    <li class="next disabled">
+      <a>Plus ancien &rarr;</a>
+    </li>
+    {% endif %}
+
   {% endif %}
 
 </ul>
