@@ -8,13 +8,21 @@ tagline:
 <article class="home">
 
   <span class="post-date">
-    {% assign d = post.date | date: "%d" | plus:'0' %}
-    {{ post.date | date: "%B" }}
-    {% case d %}
-    {% when 1 or 21 or 31 %}{{ d }}st,
-    {% when 2 or 22 %}{{ d }}nd,
-    {% when 3 or 23 %}{{ d }}rd,
-    {% else %}{{ d }}th,
+    {% assign m = post.date | date: "%-m" %}
+    {{ post.date | date: "%-d" }}
+    {% case m %}
+      {% when '1' %}Janvier
+      {% when '2' %}Février
+      {% when '3' %}Mars
+      {% when '4' %}Avril
+      {% when '5' %}Mai
+      {% when '6' %}Juin
+      {% when '7' %}Juillet
+      {% when '8' %}Août
+      {% when '9' %}Septembre
+      {% when '10' %}Octobre
+      {% when '11' %}Novembre
+      {% when '12' %}Décembre
     {% endcase %}
     {{ post.date | date: "%Y" }}
   </span>
@@ -46,28 +54,28 @@ tagline:
   {% if paginator.previous_page %}
   <li class="previous">
     {% if paginator.previous_page == 1 %}
-    <a href="{{ site.BASE_PATH }}/">&larr; Newer</a>
+    <a href="{{ site.BASE_PATH }}/">&larr; Plus récent</a>
     {% else %}
-    <a href="{{ site.BASE_PATH }}/{{ site.paginate_path | replace: ':num', paginator.previous_page }}">&larr; Newer</a>
+    <a href="{{ site.BASE_PATH }}/{{ site.paginate_path | replace: ':num', paginator.previous_page }}">&larr; Plus récent</a>
     {% endif %}
   </li>
   {% else %}
   <li class="previous disabled">
-    <a>&larr; Newer</a>
+    <a>&larr; Plus récent</a>
   </li>
   {% endif %}
-  
+
   <li>
-    <span class="page_number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    <span class="page_number">Page: {{ paginator.page }} / {{ paginator.total_pages }}</span>
   </li>
 
   {% if paginator.next_page %}
   <li class="next">
-    <a href="{{ site.BASE_PATH }}/{{ site.paginate_path | replace: ':num', paginator.next_page }}">Older &rarr;</a>
+    <a href="{{ site.BASE_PATH }}/{{ site.paginate_path | replace: ':num', paginator.next_page }}">Plus ancien &rarr;</a>
   </li>
   {% else %}
   <li class="next disabled">
-    <a>Older &rarr;</a>        
+    <a>Plus ancien &rarr;</a>
   </li>
   {% endif %}
 

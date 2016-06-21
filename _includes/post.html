@@ -6,15 +6,23 @@
 
 	<div class="col-sm-10">
 	 <span class="post-date">
-	   {% assign d = page.date | date: "%d" | plus:'0' %}
-	   {{ page.date | date: "%B" }} 
-	   {% case d %}
-	     {% when 1 or 21 or 31 %}{{ d }}st,
-	     {% when 2 or 22 %}{{ d }}nd,
-	     {% when 3 or 23 %}{{ d }}rd,
-	     {% else %}{{ d }}th,
-	   {% endcase %}
-	   {{ page.date | date: "%Y" }}
+      {% assign m = page.date | date: "%-m" %}
+      {{ page.date | date: "%-d" }}
+      {% case m %}
+			{% when '1' %}Janvier
+			{% when '2' %}Février
+			{% when '3' %}Mars
+			{% when '4' %}Avril
+			{% when '5' %}Mai
+			{% when '6' %}Juin
+			{% when '7' %}Juillet
+			{% when '8' %}Août
+			{% when '9' %}Septembre
+			{% when '10' %}Octobre
+			{% when '11' %}Novembre
+			{% when '12' %}Décembre
+      {% endcase %}
+      {{ page.date | date: "%Y" }}
 	 </span>
 	  <div class="article_body">
 	  {{ content }}
@@ -102,14 +110,14 @@
 
 		<ul class="pager">
 		  {% if page.previous %}
-		  <li class="previous"><a href="{{ site.BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a></li>
+		  <li class="previous"><a href="{{ site.BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Précédent</a></li>
 		  {% else %}
-		  <li class="previous disabled"><a>&larr; Previous</a></li>
+		  <li class="previous disabled"><a>&larr; Précédent</a></li>
 		  {% endif %}
 		  {% if page.next %}
-		  <li class="next"><a href="{{ site.BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a></li>
+		  <li class="next"><a href="{{ site.BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Suivant &rarr;</a></li>
 		  {% else %}
-			<li class="next disabled"><a>Next &rarr;</a>
+			<li class="next disabled"><a>Suivant &rarr;</a>
 		  {% endif %}
 		</ul>
 
