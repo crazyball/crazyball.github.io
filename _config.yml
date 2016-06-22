@@ -17,7 +17,7 @@ defaults:
     scope:
       path: "" # empty string for all files
     values:
-      title: Blog posts
+      title: Articles
 
 description: Blog technique traitant de PHP, Symfony, TDD, DDD et plus encore.
 author:
